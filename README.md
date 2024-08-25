@@ -3,7 +3,7 @@
 請依照以下步驟進行操作：
 
 1. **安裝 EditThisCookie 插件**
-   - 前往 Chrome 擴展商店安裝 [EditThisCookie](https://chrome.google.com/webstore/detail/editthiscookie) 插件，以便獲取 Instagram 的 cookies。
+   - 前往 Chrome 擴展商店安裝 [EditThisCookie](https://chromewebstore.google.com/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg?hl=zh-TW) 插件，以便獲取 Instagram 的 cookies。
 
 2. **登入 Instagram**
    - 使用您希望用來執行流程的 Instagram 帳號登入您的瀏覽器。
