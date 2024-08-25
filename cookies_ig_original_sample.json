@@ -1,0 +1,16 @@
+[
+    {
+        "domain": ".instagram.com",
+        "expirationDate": 0,
+        "hostOnly": false,
+        "httpOnly": false,
+        "name": "",
+        "path": "",
+        "sameSite": "",
+        "secure": true,
+        "session": false,
+        "storeId": "",
+        "value": "",
+        "id": 0
+    }
+]
