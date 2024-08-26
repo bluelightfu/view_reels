@@ -3,7 +3,7 @@ from selenium.webdriver.chrome.options import Options
 import time
 import json
 
-def open_google_homepages(num_windows:int, target_ig_reels_url:str, *args, **kwargs):
+def view_ig_reels(num_windows:int, target_ig_reels_url:str, *args, **kwargs):
     # Setup Chrome options
     chrome_options = Options()
     chrome_options.add_experimental_option("detach", True)
@@ -29,7 +29,7 @@ def open_google_homepages(num_windows:int, target_ig_reels_url:str, *args, **kwa
 if __name__ == "__main__":
     number_of_windows = 5
     target_ig_reels_url = "https://www.instagram.com/reel/XXXXXX"
-    browsers = open_google_homepages(number_of_windows, target_ig_reels_url)
+    browsers = view_ig_reels(number_of_windows, target_ig_reels_url)
     input("按下任何按鍵關閉所有視窗")  
 
 
