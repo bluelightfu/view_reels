@@ -14,7 +14,7 @@ def open_google_homepages(num_windows:int, target_ig_reels_url:str, *args, **kwa
         # cookie免帳號登入
         with open('cookies_ig.json') as f:
             cookies = json.load(f)
-        browser = webdriver.Chrome(chrome_options)
+        browser = webdriver.Chrome(options=chrome_options)
         browser.get('https://www.instagram.com/')
 
         for cookie in cookies:
