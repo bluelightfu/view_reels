@@ -35,8 +35,12 @@ if __name__ == "__main__":
     number_of_windows = 5
     target_ig_reels_url = "https://www.instagram.com/reel/C8YgP_wB9Wn/"
     browsers = view_ig_reels(number_of_windows, target_ig_reels_url)
-    input("按下任何按鍵關閉所有視窗")  
 
-
-    for browser in browsers:
-        browser.quit()  #完整關閉需要時間，請耐心等候
+    try:
+        while True:
+            time.sleep(90)  # 每 90 秒重整
+            for browser in browsers:
+                browser.refresh()  # 重整
+    except KeyboardInterrupt:
+        for browser in browsers:
+            browser.quit()  #完整關閉需要時間，請耐心等候
