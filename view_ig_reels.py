@@ -5,12 +5,13 @@ import json
 import threading
 
 class ViewIGReels(threading.Thread):
-    def __init__(self, url, time_period=60): 
+    def __init__(self, url, cookies_path='cookies_ig.json', time_period=60): 
         threading.Thread.__init__(self) 
         self.url = url 
         self.browser = None
         self.stop_flag = False
         self.time_period = time_period
+        self.cookies_path = cookies_path
   
     def run(self): 
         # Setup Chrome options
@@ -23,7 +24,7 @@ class ViewIGReels(threading.Thread):
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("disable-popup-blocking")
 
-        with open('cookies_ig.json') as f:
+        with open(self.cookies_path) as f:
             cookies = json.load(f)
         self.browser = webdriver.Chrome(options=chrome_options)
         self.browser.get('https://www.instagram.com/')
@@ -50,12 +51,13 @@ if __name__ == "__main__":
     number_of_windows = 4 # windows count 視窗數
     target_ig_reels_url = "https://www.instagram.com/reel/XXX/" # target url
     refresh_period_time = 60 # refresh period time 頁面重整週期(sec)
+    cookies_path = 'cookies_ig.json' # 帳號cookie(可更換達到更換帳號效果)
 
     threads = []
     urls = [target_ig_reels_url for _ in range(number_of_windows)]
 
     for url in urls: 
-        t = ViewIGReels(url, time_period=refresh_period_time)
+        t = ViewIGReels(url, cookies_path=cookies_path, time_period=refresh_period_time)
         t.start() # run()
         threads.append(t)
         
