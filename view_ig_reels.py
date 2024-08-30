@@ -42,7 +42,7 @@ class ViewIGReels(threading.Thread):
             self.browser.refresh()
 
         self.browser.quit()
-
+        print("[INFO] 視窗已關閉")
     def stop(self):
         self.stop_flag = True
 
@@ -59,7 +59,7 @@ if __name__ == "__main__":
         t.start() # run()
         threads.append(t)
         
-    input("[INFO] 輸入按任何鍵結束工作")
+    input("\n\n\n[INFO] 輸入按任何鍵結束工作")
     print("[INFO] 請耐心等候，當視窗跑完該時間週期，視窗將會自動關閉!")
     for t in threads:
         t.stop()
