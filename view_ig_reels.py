@@ -33,6 +33,7 @@ class ViewIGReels(threading.Thread):
         while not self.stop_flag:
             time.sleep(90)
             if self.stop_flag:
+                print("[INFO] 收到關閉指令!")
                 break
             self.browser.refresh()
         self.browser.quit()
@@ -50,7 +51,8 @@ if __name__ == "__main__":
         t.start()
         threads.append(t)
         
-    input("press any key to quit")
+    input("[INFO] 輸入按任何鍵結束工作")
+    print("[INFO] 請耐心等候，視窗將會關閉")
     for t in threads:
         t.stop()
 
